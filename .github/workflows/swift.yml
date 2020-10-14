@@ -1,0 +1,19 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Swift Version
+      run: swift --version
+    - name: Run
+      run: swift StringSort.swift
